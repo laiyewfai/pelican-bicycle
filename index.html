@@ -153,12 +153,18 @@
                       values="0 0;0 -4;0 0" keyTimes="0;0.5;1" dur="0.7s" repeatCount="indefinite"/>
     <path d="M 254 170 L 190 198 L 250 214 Z" fill="#e2e8f0"/>
     <ellipse cx="315" cy="190" rx="80" ry="52" fill="#fbfbfd" transform="rotate(-8 315 190)"/>
-    <!-- wing pivots about (268,174) via wrapper -->
-    <g transform="translate(268 174)">
-      <animateTransform attributeName="transform" type="rotate" additive="sum"
-                        values="-6;8;-6" keyTimes="0;0.5;1" dur="0.7s" repeatCount="indefinite"/>
-      <ellipse cx="35" cy="22" rx="47" ry="28" fill="#e2e8f0" stroke="#cfd8e4" stroke-width="2"/>
-    </g>
+    <!-- FAR wing (behind the body) stretches forward toward the handlebars -->
+    <path d="M 352 204 C 400 178 436 182 462 214 L 464 222 C 434 190 408 192 356 212 Z"
+          fill="#d3dae6" stroke="#c3cbda" stroke-width="1.5"/>
+    <ellipse cx="315" cy="190" rx="80" ry="52" fill="#fbfbfd" transform="rotate(-8 315 190)"/>
+    <!-- NEAR wing (in front of the body) reaches out to grip the right handlebar -->
+    <path d="M 360 184 C 410 170 456 178 494 218 L 496 224 C 454 200 420 192 372 198
+             Q 356 194 360 184 Z"
+          fill="#e9edf3" stroke="#cfd8e4" stroke-width="2"/>
+    <path d="M 392 184 Q 430 182 458 200" fill="none" stroke="#cfd8e4" stroke-width="2" stroke-linecap="round"/>
+    <path d="M 400 192 Q 432 192 462 206" fill="none" stroke="#dbe2ec" stroke-width="1.5" stroke-linecap="round"/>
+    <!-- wingtip feathers curling around the grip -->
+    <path d="M 490 217 q 7 3 3 11 q -8 0 -4 -11" fill="#dbe2ec"/>
     <path d="M 362 168 C 382 138 392 116 404 94" fill="none"
           stroke="#fbfbfd" stroke-width="26" stroke-linecap="round"/>
     <!-- head pivots about (400,110) via wrapper -->
