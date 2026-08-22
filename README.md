@@ -1,14 +1,14 @@
-# 🐰 Bunny on Wheels
+# 🚴 Pelican on Wheels
 
-A rabbit wearing a flower ribbon, riding a bicycle — animated entirely with a
-single self-contained HTML file (inline SVG + SMIL animations, no JavaScript,
-no dependencies).
+A pelican riding a bicycle — animated entirely with a single self-contained
+HTML file (inline SVG + SMIL animations, no JavaScript, no dependencies).
 
 ## Features
 
-- Pedaling legs mathematically synced to the crank and pedals
+- Pedaling legs precomputed to track the pedal circle exactly (rot is the
+  synced-to-crank keyframe set; feet land on the pedals to within ~0.4u)
 - Spinning wheels with counter-rotating (level) pedals, road speed matched to wheel speed
-- Floppy ears, bobbing head, puffball tail, flower ribbon with bow
+- Flapping wing, bobbing head, wobbling pouch
 - Scrolling road, drifting clouds, pulsing sun
 - Rotation centers baked into the animations (`animateTransform`), so it stays
   pixel-perfect at any window size or zoom level
