@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Pelican Riding a Bicycle</title>
+<title>Rabbit Riding a Bicycle</title>
 <style>
   html,body { margin:0; height:100%; overflow:hidden; background:#7ec8f7; }
   svg { display:block; width:100vw; height:100vh; }
@@ -39,6 +39,14 @@
       <ellipse cx="34" cy="-14" rx="30" ry="17"/>
       <ellipse cx="66" cy="-2"  rx="27" ry="14"/>
     </g>
+    <g id="flower">
+      <circle cx="0"    cy="-4.6" r="3.6" fill="#ff9ebc"/>
+      <circle cx="4.4"  cy="-1.4" r="3.6" fill="#ff9ebc"/>
+      <circle cx="2.7"  cy="3.7"  r="3.6" fill="#ff8fb1"/>
+      <circle cx="-2.7" cy="3.7"  r="3.6" fill="#ff8fb1"/>
+      <circle cx="-4.4" cy="-1.4" r="3.6" fill="#ff9ebc"/>
+      <circle r="2.8" fill="#ffd54d"/>
+    </g>
   </defs>
 
   <rect x="0" y="0" width="900" height="500" fill="url(#sky)"/>
@@ -58,7 +66,7 @@
   <g transform="translate(0,35)  scale(0.5)"><use href="#cloudDef" class="cloudC"/></g>
 
   <text x="450" y="48" text-anchor="middle" font-family="sans-serif" font-size="30"
-        font-weight="bold" fill="#23527c" letter-spacing="3">&#128694; PELICAN ON WHEELS &#128694;</text>
+        font-weight="bold" fill="#23527c" letter-spacing="3">&#128048; RABBIT ON WHEELS &#128048;</text>
   <!-- Road & grass -->
   <rect x="0" y="440" width="900" height="30" fill="#54545e"/>
   <rect x="0" y="440" width="900" height="5"  fill="#3f3f49"/>
@@ -147,41 +155,58 @@
     </rect>
   </g>
 
-  <!-- The Pelican -->
-  <g id="pelicanG">
+  <!-- The Rabbit -->
+  <g id="riderG">
     <animateTransform attributeName="transform" type="translate"
                       values="0 0;0 -4;0 0" keyTimes="0;0.5;1" dur="0.7s" repeatCount="indefinite"/>
-    <path d="M 254 170 L 190 198 L 250 214 Z" fill="#e2e8f0"/>
+    <!-- puff tail -->
+    <circle cx="238" cy="192" r="15" fill="#e2e8f0" stroke="#cfd8e4" stroke-width="2"/>
     <ellipse cx="315" cy="190" rx="80" ry="52" fill="#fbfbfd" transform="rotate(-8 315 190)"/>
-    <!-- FAR wing (behind the body) stretches forward toward the handlebars -->
-    <path d="M 352 204 C 400 178 436 182 462 214 L 464 222 C 434 190 408 192 356 212 Z"
-          fill="#d3dae6" stroke="#c3cbda" stroke-width="1.5"/>
+    <!-- FAR arm (behind the body) stretches forward toward the handlebars -->
+    <path d="M 352 206 Q 410 184 458 216" fill="none"
+          stroke="#d3dae6" stroke-width="12" stroke-linecap="round"/>
+    <circle cx="460" cy="218" r="7" fill="#d3dae6"/>
     <ellipse cx="315" cy="190" rx="80" ry="52" fill="#fbfbfd" transform="rotate(-8 315 190)"/>
-    <!-- NEAR wing (in front of the body) reaches out to grip the right handlebar -->
-    <path d="M 360 184 C 410 170 456 178 494 218 L 496 224 C 454 200 420 192 372 198
-             Q 356 194 360 184 Z"
-          fill="#e9edf3" stroke="#cfd8e4" stroke-width="2"/>
-    <path d="M 392 184 Q 430 182 458 200" fill="none" stroke="#cfd8e4" stroke-width="2" stroke-linecap="round"/>
-    <path d="M 400 192 Q 432 192 462 206" fill="none" stroke="#dbe2ec" stroke-width="1.5" stroke-linecap="round"/>
-    <!-- wingtip feathers curling around the grip -->
-    <path d="M 490 217 q 7 3 3 11 q -8 0 -4 -11" fill="#dbe2ec"/>
+    <!-- NEAR arm (in front of the body) reaches out to grip the right handlebar -->
+    <path d="M 372 178 Q 432 168 492 220" fill="none"
+          stroke="#fbfbfd" stroke-width="12" stroke-linecap="round"/>
+    <circle cx="494" cy="221" r="8" fill="#f8ccd6"/>
+    <!-- neck -->
     <path d="M 362 168 C 382 138 392 116 404 94" fill="none"
           stroke="#fbfbfd" stroke-width="26" stroke-linecap="round"/>
+    <!-- flower ribbon around the neck: band + bow + flowers -->
+    <path d="M 378 143 L 402 116" stroke="#f06292" stroke-width="11" stroke-linecap="round"/>
+    <path d="M 379 144 l -14 -8 q -6 10 3 15 z" fill="#f06292"/>
+    <path d="M 379 144 l -3 16 q 11 3 14 -7 z" fill="#ec5f8e"/>
+    <use href="#flower" transform="translate(400 118) scale(1.05)"/>
+    <use href="#flower" transform="translate(388 131) scale(0.7)"/>
     <!-- head pivots about (400,110) via wrapper -->
     <g transform="translate(400 110)">
       <animateTransform attributeName="transform" type="rotate" additive="sum"
                         values="-2;3;-2" keyTimes="0;0.5;1" dur="1.2s" repeatCount="indefinite"/>
+      <!-- floppy ears pivot at their bases -->
+      <g transform="translate(6 -40)">
+        <animateTransform attributeName="transform" type="rotate" additive="sum"
+                          values="-5;4;-5" keyTimes="0;0.5;1" dur="1.6s" repeatCount="indefinite"/>
+        <ellipse cx="-2" cy="-19" rx="9.5" ry="21" fill="#fbfbfd" transform="rotate(-8 -2 -19)"/>
+        <ellipse cx="-2" cy="-17.5" rx="4" ry="14" fill="#f4b6c2" transform="rotate(-8 -2 -19)"/>
+      </g>
+      <g transform="translate(25 -38)">
+        <animateTransform attributeName="transform" type="rotate" additive="sum"
+                          values="4;-5;4" keyTimes="0;0.5;1" dur="1.4s" repeatCount="indefinite"/>
+        <ellipse cx="3" cy="-18.5" rx="9.5" ry="20" fill="#fbfbfd" transform="rotate(8 3 -18.5)"/>
+        <ellipse cx="3" cy="-17" rx="4" ry="13" fill="#f4b6c2" transform="rotate(8 3 -18.5)"/>
+      </g>
       <circle cx="15" cy="-25" r="23" fill="#fbfbfd"/>
-      <path d="M -8 -30 Q 14 -60 38 -32 L 38 -26 Q 15 -36 -8 -24 Z" fill="#e63946"/>
       <circle cx="24" cy="-31" r="4.5" fill="#222"/>
       <circle cx="25.5" cy="-32.5" r="1.5" fill="#fff"/>
-      <path d="M 33 -34 L 106 -23 L 103 -16 L 34 -22 Z" fill="#f4a340"/>
-      <!-- pouch wobbles about its attachment point (34,-22) in head-local coords -->
-      <g transform="translate(34 -22)">
-        <animateTransform attributeName="transform" type="rotate" additive="sum"
-                          values="0;4;0" keyTimes="0;0.5;1" dur="1.2s" repeatCount="indefinite"/>
-        <path d="M 2 0 Q 29 44 69 5 L 0 2 Z" fill="#f6b45a"/>
-      </g>
+      <!-- nose, mouth, whiskers, blush -->
+      <circle cx="37" cy="-23" r="3.2" fill="#f06292"/>
+      <path d="M 34 -19 q -4 4 -8 3" fill="none" stroke="#c9a0a8" stroke-width="1.6" stroke-linecap="round"/>
+      <path d="M 32 -21 L 18 -24 M 32 -18 L 18 -15" stroke="#d9dee7" stroke-width="1.5" stroke-linecap="round"/>
+      <circle cx="27" cy="-13" r="4" fill="#ffd3de" opacity="0.85"/>
+      <!-- flower pinned to the ear -->
+      <use href="#flower" transform="translate(30 -48) scale(0.75)"/>
     </g>
   </g>
 
